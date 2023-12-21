@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajouter un Livre</title>
+</head>
+<body>
+
+<h2>Ajouter un Livre</h2>
+
+<form th:action="@{/api/livres}" th:object="${livre}" method="post">
+    <label for="titre">Titre :</label>
+    <input type="text" id="titre" th:field="*{titre}" required>
+
+    <label for="auteur">Auteur :</label>
+    <input type="text" id="auteur" th:field="*{auteur}" required>
+
+    <label for="datePublication">Date de Publication :</label>
+    <input type="text" id="datePublication" th:field="*{datePublication}" required>
+
+    <label for="numeroISBN">Numéro ISBN :</label>
+    <input type="text" id="numeroISBN" th:field="*{numeroISBN}" required>
+
+    <label for="nombreExemplaires">Nombre d'Exemplaires :</label>
+    <input type="number" id="nombreExemplaires" th:field="*{nombreExemplaires}" required>
+
+    <button type="submit">Ajouter Livre</button>
+</form>
+
+</body>
+</html>
